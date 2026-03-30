@@ -30,12 +30,12 @@ MAX_TOKENS = 1024        # Max response length
 
 # ── 4A: System Prompts for Different Use Cases ────────────
 
-SALES_SYSTEM_PROMPT = """You are an expert sales assistant for Jaysynth Orgochem Limited, 
+SALES_SYSTEM_PROMPT = """You are an expert sales assistant for Pigment Company Orgochem Limited, 
 a leading Indian company specializing in colorants, pigments, dyes, and pigment dispersions 
 with 50+ years of experience.
 
 Your role is to:
-1. Answer customer queries about Jaysynth's products accurately using ONLY the provided context
+1. Answer customer queries about Pigment Company's products accurately using ONLY the provided context
 2. Highlight relevant product advantages, certifications, and technical specifications
 3. Recommend specific products (with grades and C.I. numbers) when applicable
 4. Be professional yet approachable — like a knowledgeable sales engineer
@@ -56,11 +56,11 @@ Format guidelines:
 - Keep technical details accurate — these are industry professionals asking
 """
 
-MARKETING_SYSTEM_PROMPT = """You are a marketing content specialist for Jaysynth Orgochem Limited,
+MARKETING_SYSTEM_PROMPT = """You are a marketing content specialist for Pigment Company Orgochem Limited,
 a pioneer in the colorants industry since 1971.
 
 Using ONLY the provided context, create compelling marketing content that:
-1. Emphasizes Jaysynth's unique value propositions
+1. Emphasizes Pigment Company's unique value propositions
 2. Uses industry-specific terminology correctly
 3. Highlights innovation (nano-level particle control, modern R&D)
 4. Showcases the breadth of applications (ink, paint, plastic, textile)
@@ -69,7 +69,7 @@ Using ONLY the provided context, create compelling marketing content that:
 Always ground your content in the factual details from the context.
 """
 
-TECHNICAL_SYSTEM_PROMPT = """You are a technical support specialist for Jaysynth Orgochem Limited.
+TECHNICAL_SYSTEM_PROMPT = """You are a technical support specialist for Pigment Company Orgochem Limited.
 
 Using ONLY the provided context, provide accurate technical information about:
 1. Product specifications (C.I. numbers, grades, heat stability, particle size)
@@ -116,7 +116,7 @@ def build_prompt(
         messages.extend(conversation_history)
     
     # Construct the user message with context
-    user_message = f"""Based on the following product documentation from Jaysynth Orgochem:
+    user_message = f"""Based on the following product documentation from Pigment Company Orgochem:
 
 {context}
 
@@ -131,7 +131,7 @@ Please provide a helpful, accurate response based on the above documentation."""
 
 
 # ── 4C: GPT API Call ──────────────────────────────────────
-class JaysynthGenerator:
+class Pigment CompanyGenerator:
     """
     LLM response generator using OpenAI GPT API.
     """
@@ -273,7 +273,7 @@ def test_generation():
     C.I.NO: Green 7, Product: Green GFP, Grade: M-900, Heat Stability: 300°C
     C.I.NO: Violet 23, Product: Violet BL, Grade: M-505, Heat Stability: 280°C
     
-    --- Source 2 (Page 3 | About Jaysynth) ---
+    --- Source 2 (Page 3 | About Pigment Company) ---
     A 50 year old renowned company in the field of Dyestuff, Pigments, Pigments Dispersions
     and Digital Inks. Knowledge and experience in Purification of Colorants and stable 
     Particle reduction up to 200 Nano meter.
@@ -282,7 +282,7 @@ def test_generation():
     query = "Which pigments do you recommend for high-temperature plastic molding above 250°C?"
     
     try:
-        generator = JaysynthGenerator()
+        generator = Pigment CompanyGenerator()
         
         print(f"🔍 Query: {query}\n")
         answer = generator.generate(query, mock_context, mode="sales")
