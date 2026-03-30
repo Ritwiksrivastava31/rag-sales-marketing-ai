@@ -36,7 +36,7 @@ EMBEDDING_MODEL = "all-mpnet-base-v2"   # Good balance of speed & quality
 # Alternative: "all-MiniLM-L6-v2"       # Faster, slightly less accurate
 CHROMA_PERSIST_DIR = "data/chroma_db"
 FAISS_INDEX_PATH = "data/faiss_index"
-COLLECTION_NAME = "jaysynth_docs"
+COLLECTION_NAME = "Pigment Company_docs"
 
 
 # ── 2A: Load Chunks ───────────────────────────────────────
@@ -123,7 +123,7 @@ def build_chroma_store(
     # Create collection
     collection = client.create_collection(
         name=collection_name,
-        metadata={"description": "Jaysynth Orgochem product documentation"}
+        metadata={"description": "Pigment Company Orgochem product documentation"}
     )
     
     # Prepare data for insertion
