@@ -3,7 +3,7 @@
 STEP 1: Document Ingestion & Chunking
 =============================================================
 This module handles:
-- Reading the Jaysynth PDF document
+- Reading the Pigment Company PDF document
 - Extracting text from each page
 - Cleaning and preprocessing the text
 - Splitting into smart chunks that preserve context
@@ -21,7 +21,7 @@ from typing import List, Dict
 
 
 # ── Configuration ──────────────────────────────────────────
-PDF_PATH = "data/Jaysynth-details.pdf"       # Place your PDF here
+PDF_PATH = "data/Pigment Company-details.pdf"       # Place your PDF here
 CHUNKS_OUTPUT = "data/chunks.json"           # Output chunked data
 CHUNK_SIZE = 500                             # Characters per chunk
 CHUNK_OVERLAP = 100                          # Overlap between chunks
@@ -104,7 +104,7 @@ def create_chunks(
                 "metadata": {
                     "page_number": page_num,
                     "section_title": section_title,
-                    "source": "Jaysynth-details.pdf"
+                    "source": "Pigment Company-details.pdf"
                 }
             })
             chunk_id += 1
@@ -123,7 +123,7 @@ def create_chunks(
                     "metadata": {
                         "page_number": page_num,
                         "section_title": section_title,
-                        "source": "Jaysynth-details.pdf"
+                        "source": "Pigment Company-details.pdf"
                     }
                 })
                 chunk_id += 1
@@ -147,7 +147,7 @@ def create_chunks(
                 "metadata": {
                     "page_number": page_num,
                     "section_title": section_title,
-                    "source": "Jaysynth-details.pdf"
+                    "source": "Pigment Company-details.pdf"
                 }
             })
             chunk_id += 1
