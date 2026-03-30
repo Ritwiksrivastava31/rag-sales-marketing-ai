@@ -23,7 +23,7 @@ import chromadb
 
 # ── Configuration ──────────────────────────────────────────
 CHROMA_PERSIST_DIR = "data/chroma_db"
-COLLECTION_NAME = "jaysynth_docs"
+COLLECTION_NAME = "Pigment Company_docs"
 EMBEDDING_MODEL = "all-mpnet-base-v2"
 TOP_K = 5                                    # Number of chunks to retrieve
 RERANK = True                                # Enable cross-encoder reranking
@@ -31,9 +31,9 @@ RERANK_MODEL = "cross-encoder/ms-marco-MiniLM-L-6-v2"
 
 
 # ── 3A: Initialize Retrieval Components ───────────────────
-class JaysynthRetriever:
+class Pigment CompanyRetriever:
     """
-    Retriever for Jaysynth product documentation.
+    Retriever for Pigment Company product documentation.
     
     Features:
     - Semantic search using dense embeddings
@@ -222,10 +222,10 @@ class JaysynthRetriever:
 # ── Sample Queries for Testing ─────────────────────────────
 SAMPLE_QUERIES = [
     "What pigments are best for water-based flexo ink applications?",
-    "Which Jaysynth products have heat stability above 280°C for plastics?",
+    "Which Pigment Company products have heat stability above 280°C for plastics?",
     "Tell me about Pigmefine series for decorative paints",
-    "What certifications does Jaysynth hold?",
-    "What is Jaysynth's expertise in particle size distribution?",
+    "What certifications does Pigment Company hold?",
+    "What is Pigment Company's expertise in particle size distribution?",
     "Do you have pigments suitable for automotive coatings?",
     "What are the packaging options available?",
     "Which pigments work for both paint and plastic applications?",
@@ -239,7 +239,7 @@ def run_retrieval_tests():
     print("STEP 3: Retrieval Pipeline Testing")
     print("="*60 + "\n")
     
-    retriever = JaysynthRetriever(use_reranker=False)  # Set True if you have the model
+    retriever = Pigment CompanyRetriever(use_reranker=False)  # Set True if you have the model
     
     for query in SAMPLE_QUERIES[:3]:  # Test first 3
         retriever.explain_retrieval(query)
