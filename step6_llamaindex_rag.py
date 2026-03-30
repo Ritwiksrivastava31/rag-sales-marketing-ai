@@ -40,13 +40,13 @@ from llama_index.vector_stores.chroma import ChromaVectorStore
 # ── Configuration ──────────────────────────────────────────
 PDF_DIR = "data/"                            # Directory containing the PDF
 CHROMA_DIR = "data/llamaindex_chroma_db"
-COLLECTION_NAME = "jaysynth_llamaindex"
+COLLECTION_NAME = "Pigment Company_llamaindex"
 EMBEDDING_MODEL = "sentence-transformers/all-mpnet-base-v2"
 GPT_MODEL = "gpt-4o-mini"
 
 
 # ── Sales System Prompt ────────────────────────────────────
-SALES_PROMPT = """You are a knowledgeable sales assistant for Jaysynth Orgochem Limited, 
+SALES_PROMPT = """You are a knowledgeable sales assistant for Pigment Company Orgochem Limited, 
 a 50+ year old Indian company leading in colorants, pigments, and dispersions.
 
 When answering:
@@ -194,7 +194,7 @@ def query_rag(index, question: str, top_k: int = 5) -> str:
 def interactive_chat(index):
     """Start an interactive chat session."""
     print("\n" + "="*60)
-    print("💬 Jaysynth Sales Assistant (LlamaIndex)")
+    print("💬 Pigment Company Sales Assistant (LlamaIndex)")
     print("   Type 'quit' to exit")
     print("="*60 + "\n")
     
