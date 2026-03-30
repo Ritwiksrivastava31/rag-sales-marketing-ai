@@ -16,16 +16,16 @@ Usage:
 
 import json
 from typing import List, Dict
-from step3_retrieve import JaysynthRetriever
+from step3_retrieve import Pigment CompanyRetriever
 
 
 # ── Evaluation Test Cases ──────────────────────────────────
-# These are ground-truth Q&A pairs based on the Jaysynth PDF.
+# These are ground-truth Q&A pairs based on the Pigment Company PDF.
 # You should expand this list as you refine the system.
 
 EVAL_CASES = [
     {
-        "query": "What year was Jaysynth founded?",
+        "query": "What year was Pigment Company founded?",
         "expected_answer_contains": ["1971"],
         "expected_pages": [2, 3],
         "category": "company_info"
@@ -43,7 +43,7 @@ EVAL_CASES = [
         "category": "product_recommendation"
     },
     {
-        "query": "What certifications does Jaysynth have?",
+        "query": "What certifications does Pigment Company have?",
         "expected_answer_contains": ["ISO", "REACH", "FDA"],
         "expected_pages": [48, 43],
         "category": "compliance"
@@ -55,7 +55,7 @@ EVAL_CASES = [
         "category": "product_info"
     },
     {
-        "query": "What particle size can Jaysynth achieve?",
+        "query": "What particle size can Pigment Company achieve?",
         "expected_answer_contains": ["200", "nano"],
         "expected_pages": [3, 7],
         "category": "technical"
@@ -76,7 +76,7 @@ EVAL_CASES = [
 
 
 # ── 7A: Retrieval Evaluation ──────────────────────────────
-def evaluate_retrieval(retriever: JaysynthRetriever, top_k: int = 5) -> Dict:
+def evaluate_retrieval(retriever: Pigment CompanyRetriever, top_k: int = 5) -> Dict:
     """
     Evaluate retrieval quality.
     
@@ -210,7 +210,7 @@ def run_tuning_experiments():
     print("="*60)
     
     # Experiment 1: Different top_k values
-    retriever = JaysynthRetriever(use_reranker=False)
+    retriever = Pigment CompanyRetriever(use_reranker=False)
     
     for top_k in [3, 5, 7, 10]:
         results = evaluate_retrieval(retriever, top_k=top_k)
@@ -226,7 +226,7 @@ def main():
     print("="*60 + "\n")
     
     # Initialize retriever
-    retriever = JaysynthRetriever(use_reranker=False)
+    retriever = Pigment CompanyRetriever(use_reranker=False)
     
     # Run evaluation
     results = evaluate_retrieval(retriever, top_k=5)
