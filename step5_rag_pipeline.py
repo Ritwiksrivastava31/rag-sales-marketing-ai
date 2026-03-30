@@ -33,19 +33,19 @@ load_dotenv()
 # Import our modules
 from step1_ingest import run_ingestion
 from step2_embed import run_embedding, load_chunks
-from step3_retrieve import JaysynthRetriever
-from step4_generate import JaysynthGenerator, format_response_with_sources
+from step3_retrieve import Pigment CompanyRetriever
+from step4_generate import Pigment CompanyGenerator, format_response_with_sources
 
 
 # ── Configuration ──────────────────────────────────────────
-PDF_PATH = "data/Jaysynth-details.pdf"
+PDF_PATH = "data/Pigment Company-details.pdf"
 CHROMA_DIR = "data/chroma_db"
 
 
 # ── 5A: Full RAG Chain ────────────────────────────────────
-class JaysynthRAG:
+class Pigment CompanyRAG:
     """
-    Complete RAG system for Jaysynth Orgochem.
+    Complete RAG system for Pigment Company Orgochem.
     
     Combines retrieval and generation into a single
     easy-to-use interface.
@@ -68,21 +68,21 @@ class JaysynthRAG:
         self.mode = mode
         
         print("\n" + "="*60)
-        print("🚀 Initializing Jaysynth RAG System")
+        print("🚀 Initializing Pigment Company RAG System")
         print("="*60 + "\n")
         
         # Initialize retriever
-        self.retriever = JaysynthRetriever(use_reranker=use_reranker)
+        self.retriever = Pigment CompanyRetriever(use_reranker=use_reranker)
         
         # Initialize generator
         try:
-            self.generator = JaysynthGenerator(model=gpt_model)
+            self.generator = Pigment CompanyGenerator(model=gpt_model)
         except ValueError as e:
             print(f"⚠️  Generator not available: {e}")
             print("   RAG will work in retrieval-only mode.\n")
             self.generator = None
         
-        print("\n✅ Jaysynth RAG System ready!\n")
+        print("\n✅ Pigment Company RAG System ready!\n")
     
     def ask(
         self,
@@ -96,7 +96,7 @@ class JaysynthRAG:
         Ask a question and get a RAG-powered response.
         
         Args:
-            query: Your question about Jaysynth products
+            query: Your question about Pigment Company products
             top_k: Number of context chunks to retrieve
             mode: Override default mode (sales/marketing/technical)
             show_sources: Include source references in response
@@ -112,7 +112,7 @@ class JaysynthRAG:
         results, context = self.retriever.retrieve(query, top_k=top_k)
         
         if not results:
-            return "I couldn't find relevant information in the Jaysynth documentation for this query."
+            return "I couldn't find relevant information in the Pigment Company documentation for this query."
         
         print(f"   Found {len(results)} relevant chunks\n")
         
@@ -142,7 +142,7 @@ class JaysynthRAG:
         'mode:sales/marketing/technical' to switch modes.
         """
         print("\n" + "="*60)
-        print("💬 Jaysynth Sales Assistant - Interactive Chat")
+        print("💬 Pigment Company Sales Assistant - Interactive Chat")
         print("="*60)
         print("Commands: 'quit' | 'reset' | 'mode:sales' | 'mode:technical' | 'mode:marketing'")
         print("="*60 + "\n")
@@ -173,7 +173,7 @@ class JaysynthRAG:
             
             # Get response
             answer = self.ask(query, stream=False)
-            print(f"\n🤖 Jaysynth Assistant:\n{answer}\n")
+            print(f"\n🤖 Pigment Company Assistant:\n{answer}\n")
             print("-" * 40 + "\n")
 
 
@@ -184,13 +184,13 @@ def build_index(pdf_path: str = PDF_PATH):
     Run this once, or whenever the PDF is updated.
     """
     print("\n" + "="*60)
-    print("📦 Building Jaysynth RAG Index")
+    print("📦 Building Pigment Company RAG Index")
     print("="*60 + "\n")
     
     # Check PDF exists
     if not Path(pdf_path).exists():
         print(f"❌ PDF not found at: {pdf_path}")
-        print(f"   Please place 'Jaysynth-details.pdf' in the data/ directory")
+        print(f"   Please place 'Pigment Company-details.pdf' in the data/ directory")
         return False
     
     # Step 1: Ingest
@@ -210,7 +210,7 @@ def build_index(pdf_path: str = PDF_PATH):
 
 # ── Main ──────────────────────────────────────────────────
 def main():
-    parser = argparse.ArgumentParser(description="Jaysynth RAG System")
+    parser = argparse.ArgumentParser(description="Pigment Company RAG System")
     parser.add_argument('--build', action='store_true',
                         help='Build the vector index from PDF')
     parser.add_argument('--chat', action='store_true',
@@ -239,7 +239,7 @@ def main():
         return
     
     # Initialize RAG
-    rag = JaysynthRAG(
+    rag = Pigment CompanyRAG(
         use_reranker=args.rerank,
         gpt_model=args.model,
         mode=args.mode
