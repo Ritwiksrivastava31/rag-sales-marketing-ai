@@ -1,6 +1,6 @@
 # RAG System — Sales & Marketing AI Assistant
 
-An AI-powered Retrieval-Augmented Generation (RAG) system built for **Jaysynth Orgochem Limited**, enabling intelligent Q&A about their colorants, pigments, dispersions, and digital ink products.
+An AI-powered Retrieval-Augmented Generation (RAG) system built for Pigment based Company, enabling intelligent Q&A about their colorants, pigments, dispersions, and digital ink products.
 
 ---
 
@@ -57,7 +57,7 @@ cp .env.example .env
 ```bash
 # Create data directory and place the PDF
 mkdir -p data
-cp /path/to/Jaysynth-details.pdf data/
+cp /path/to/Pigment Company-details.pdf data/
 ```
 
 ### 4. Build the Index
@@ -85,9 +85,9 @@ python step5_rag_pipeline.py --query "Heat stability specs for plastics" --mode 
 ## Project Structure
 
 ```
-jaysynth_rag/
+Pigment Company/
 ├── data/
-│   ├── Jaysynth-details.pdf     # Source document
+│   ├── Pigment Company.pdf     # Source document
 │   ├── chunks.json              # Generated chunks (after Step 1)
 │   └── chroma_db/               # Vector store (after Step 2)
 │
