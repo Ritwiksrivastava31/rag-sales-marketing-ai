@@ -1,4 +1,4 @@
-# Jaysynth RAG System — Sales & Marketing AI Assistant
+# RAG System — Sales & Marketing AI Assistant
 
 An AI-powered Retrieval-Augmented Generation (RAG) system built for **Jaysynth Orgochem Limited**, enabling intelligent Q&A about their colorants, pigments, dispersions, and digital ink products.
 
