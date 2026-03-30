@@ -1,0 +1,10 @@
+.env
+.env.txt
+data/chroma_db/
+data/chunks.json
+data/prospects/
+data/*.pdf
+__pycache__/
+*.pyc
+.venv/
+venv/

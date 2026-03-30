@@ -1,0 +1,171 @@
+{
+  "total_queries": 8,
+  "hit_rate": 1.0,
+  "mrr": 0.9166666666666667,
+  "content_match_rate": 0.875,
+  "details": [
+    {
+      "query": "What year was Jaysynth founded?",
+      "category": "company_info",
+      "page_hit": true,
+      "content_match": false,
+      "expected_pages": [
+        2,
+        3
+      ],
+      "retrieved_pages": [
+        3,
+        1,
+        2,
+        4,
+        36
+      ],
+      "expected_keywords": [
+        "1971"
+      ]
+    },
+    {
+      "query": "What is the heat stability of Green GFP M-900 for plastic moldings?",
+      "category": "product_specs",
+      "page_hit": true,
+      "content_match": true,
+      "expected_pages": [
+        10
+      ],
+      "retrieved_pages": [
+        10,
+        5,
+        15,
+        12,
+        47
+      ],
+      "expected_keywords": [
+        "300"
+      ]
+    },
+    {
+      "query": "What pigments are available for solvent-based inks?",
+      "category": "product_recommendation",
+      "page_hit": true,
+      "content_match": true,
+      "expected_pages": [
+        14
+      ],
+      "retrieved_pages": [
+        14,
+        15,
+        8,
+        16,
+        9
+      ],
+      "expected_keywords": [
+        "Beta Blue BFLX",
+        "I-705"
+      ]
+    },
+    {
+      "query": "What certifications does Jaysynth have?",
+      "category": "compliance",
+      "page_hit": true,
+      "content_match": true,
+      "expected_pages": [
+        48,
+        43
+      ],
+      "retrieved_pages": [
+        2,
+        3,
+        48,
+        4,
+        1
+      ],
+      "expected_keywords": [
+        "ISO",
+        "REACH",
+        "FDA"
+      ]
+    },
+    {
+      "query": "What is Pigmefine used for?",
+      "category": "product_info",
+      "page_hit": true,
+      "content_match": true,
+      "expected_pages": [
+        24,
+        25
+      ],
+      "retrieved_pages": [
+        24,
+        25,
+        26,
+        19,
+        29
+      ],
+      "expected_keywords": [
+        "Decorative",
+        "Paint"
+      ]
+    },
+    {
+      "query": "What particle size can Jaysynth achieve?",
+      "category": "technical",
+      "page_hit": true,
+      "content_match": true,
+      "expected_pages": [
+        3,
+        7
+      ],
+      "retrieved_pages": [
+        3,
+        7,
+        11,
+        47,
+        46
+      ],
+      "expected_keywords": [
+        "200",
+        "nano"
+      ]
+    },
+    {
+      "query": "Which pigments are non-crystalline and non-flocculating?",
+      "category": "product_specs",
+      "page_hit": true,
+      "content_match": true,
+      "expected_pages": [
+        12
+      ],
+      "retrieved_pages": [
+        12,
+        20,
+        9,
+        31,
+        14
+      ],
+      "expected_keywords": [
+        "Alpha Blue AC",
+        "P-861"
+      ]
+    },
+    {
+      "query": "What packaging sizes are available for pigment powders?",
+      "category": "logistics",
+      "page_hit": true,
+      "content_match": true,
+      "expected_pages": [
+        47
+      ],
+      "retrieved_pages": [
+        47,
+        8,
+        9,
+        19,
+        3
+      ],
+      "expected_keywords": [
+        "20 Kg",
+        "25 Kg"
+      ]
+    }
+  ]
+}
